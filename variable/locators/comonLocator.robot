@@ -19,7 +19,7 @@ ${Web_Welcome_Message}            xpath=//div[@class='reminder_message']
 ${Web_Continue_Button}            xpath=//button[contains(.,'Continue')]
 ${Web_Provider_Link}            xpath=//a[text()='For Providers']
 ${Web_Media_Iframe}            xpath=//iframe[@name="jitsiConferenceFrame0"]
-${Web_JoinNow_Button}            xpath=//div[@id='videoResolutionLabel']/..
+${Web_Video_Label}            xpath=//div[text()='Text me when the provider is ready']/ancestor::a[@class='button']
 ${Web_Loading_Icon}            xpath=//div[@class='blockUI blockMsg blockPage']
 
 #Providers

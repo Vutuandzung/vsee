@@ -11,18 +11,14 @@ Chat Positive Flow
     ...    [Description]    Verify positive testcase for chat box
     ...    [Author]    John.vu
     ...    [Date]       2024.09.30
-    
     Open Browser And Start Test    ${meeting_room_url}   ${chrome}    chrome_browser 
     Input "${client_name}" Text in "${Web_Yourname_Input}" Element
     Input "${client_reason}" Text in "${Web_Reason_Visit_Input}" Element
     Select Checkbox    ${Web_Give_Consent_Checkbox} 
     Click "${Web_Enter_WaitingRoom_Button}" Element
-    # Wait Until Page Contains    ${web_Media_Iframe}
-    # Select Frame    name=jitsiConferenceFrame0
+    Verify Element Vissile    ${Web_Video_Label}
     Verify Element Is Not Vissile    ${Web_Loading_Icon}
-    Sleep    10s
-    
-    # Open New Window    ${meeting_room_url}
+
     Open Browser And Start Test    ${meeting_room_url}   ${edge}    edge_browser 
     Click "${Web_Provider_Link}" Element
 
@@ -39,8 +35,14 @@ Chat Positive Flow
     Press Keys    ${Web_VisitChat_Input}    \ue007
 
     Switch Browser  chrome_browser
-    Verify Text On Client End    ${chat_text}    
+    Verify Text On Client End    ${chat_text}  
 
+    Switch Browser  edge_browser  
+    Close Browser
+
+    Switch Browser  chrome_browser  
+    Close Browser
+    
 *** Keywords ***
 Verify Text On Client End
     [Documentation]
