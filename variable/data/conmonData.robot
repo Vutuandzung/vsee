@@ -15,4 +15,4 @@ ${web_url}         https://team.vsee.me/providers/login
 ${meeting_room_url}         https://team.vsee.me/u/robin1
 # Web client
 ${client_name}        John Vu
-${client_reason}      I am sick af
+${client_reason}      Feeling dizzy
